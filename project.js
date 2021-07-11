@@ -1,29 +1,45 @@
-console.log("this is js");
-//constructor
-function book(name, author, type) {
+console.log("This is index.js");
+// Todos"
+// 1. Store all the data to the localStorage
+// 2. Give another column as an option to delete the book
+// 3. Add a scroll bar to the view
+
+// Constructor
+function Book(name, author, type) {
     this.name = name;
     this.author = author;
     this.type = type;
 }
 
-//display constructor
+// Display Constructor
 function Display() {
-   
+
 }
 
-// add submit event listener to form
-Display.prototype.add = function(book){
-    console.log("adding to ui");
-    let uisstring=
+// Add methods to display prototype
+Display.prototype.add = function (book) {
+    console.log("Adding to UI");
+    tableBody = document.getElementById('tableBody');
+    let uiString = `<tr>
+                        <td>${book.name}</td>
+                        <td>${book.author}</td>
+                        <td>${book.type}</td>
+                    </tr>`;
+    tableBody.innerHTML += uiString;
 }
 
-
-Display.prototype.clear = function(){
-    let libraryform = document.getElementById('libraryform');
-    libraryform.reset();
+// Implement the clear function
+Display.prototype.clear = function () {
+    let libraryForm = document.getElementById('libraryForm');
+    libraryForm.reset();
 }
 
-//add submit event listener to libraryform
+// Implement the validate function
+
+
+
+
+
 
 // Add submit event listener to libraryForm
 let libraryForm = document.getElementById('libraryForm');
@@ -52,6 +68,10 @@ function libraryFormSubmit(e) {
     console.log(book);
 
     let display = new Display();
+    display.add(book);
+    // display.clear();
+    
+ 
 
     e.preventDefault();
 }
