@@ -1,5 +1,5 @@
-console.log("this id es6 version");
-class book {
+console.log('this id es6 version');
+class Book {
     constructor(name, author, type) {
         this.name = name;
         this.author = author;
@@ -7,10 +7,10 @@ class book {
     }
 }
 
-class display {
+class Display {
     add(book) {
         console.log("Adding to UI");
-        tableBody = document.getElementById('tableBody');
+        let tableBody = document.getElementById('tableBody');
         let uiString = `<tr>
                             <td>${book.name}</td>
                             <td>${book.author}</td>
